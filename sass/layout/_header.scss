@@ -3,9 +3,11 @@
   border-bottom: 1px solid #ececec;
 }
 
-.header .container {
-  display: flex;
-  align-items: center;
+.header {
+  .container {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation {
@@ -13,12 +15,12 @@
   align-items: center;
 }
 
-.header-list {
+.header__list {
   display: flex;
   margin-left: 93px;
 }
 
-.header-item {
+.header__item {
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -26,13 +28,13 @@
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
-.header-item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.header-link {
+.header__link {
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
@@ -40,21 +42,21 @@
 
 .current {
   color: var(--accent-color);
+
+  &::after {
+    content: '';
+    display: block;
+    background: #2196f3;
+    height: 4px;
+    border-radius: 2px;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
 }
 
-.current::after {
-  content: '';
-  display: block;
-  background: #2196f3;
-  height: 4px;
-  border-radius: 2px;
-  bottom: 0;
-  width: 100%;
-  position: absolute;
-}
-
-.header-mail,
-.header-tel {
+.header__mail,
+.header__tel {
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -68,39 +70,41 @@
   letter-spacing: 0.02em;
 }
 
-.header-mail-tel {
+.header__contacts {
   display: flex;
   margin-left: auto;
   align-items: center;
+
+  & .header__сontact-details + {
+    .header__сontact-details {
+      margin-left: 50px;
+    }
+  }
 }
 
-.header-mail-tel .header-mail-tel-list + .header-mail-tel-list {
-  margin-left: 50px;
-}
-
-.header-mail::before {
+.header__mail::before {
   content: '';
   fill: var(--secondary-text-color);
 }
 
-.envelope {
+.header__envelope {
   margin-right: 10px;
   fill: var(--secondary-text-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .header__mail:hover &,
+  .header__mail:focus & {
+    fill: var(--accent-color);
+  }
 }
 
-.header-mail:hover .envelope,
-.header-mail:focus .envelope {
-  fill: var(--accent-color);
-}
-
-.smartphone {
+.header__smartphone {
   margin-right: 10px;
   fill: var(--secondary-text-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.header-tel:hover .smartphone,
-.header-tel:focus .smartphone {
-  fill: var(--accent-color);
+  .header__tel:hover &,
+  .header__tel:focus & {
+    fill: var(--accent-color);
+  }
 }
