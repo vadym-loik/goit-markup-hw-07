@@ -6,3 +6,8 @@
   --primary-link-color: #afb1b8;
   --projects-list-gap: 30px;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-text-color);
+}
