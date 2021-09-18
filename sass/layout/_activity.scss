@@ -1,4 +1,4 @@
-.activity-heading {
+.activity__heading {
   margin-bottom: 50px;
 
   font-weight: 700;
@@ -7,19 +7,19 @@
   letter-spacing: 0.03em;
 }
 
-.activity-list {
+.activity__list {
   display: flex;
 }
 
-.activity-item:not(:last-child) {
-  margin-right: 30px;
-}
-
-.activity-item {
+.activity__item {
   position: relative;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
-.activity-description {
+.activity-description__text {
   font-family: Roboto;
   font-weight: 700;
   font-size: 14px;
